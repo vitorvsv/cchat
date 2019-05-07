@@ -22,11 +22,24 @@ int main(void)
     char msg[64];
     int indexMSG = 0;
 
+    char reader[100];
+    int cont = 0; 
+    
     while (1)
     {
         if (serial_received(COM)){
             char c = read_serial(COM);
-            printc(5, 11, 0x02, 0x08, c); // mostra o que recebeu 
+            printc(2,linha,0x06,0x07,c);
+            //  linha ++;
+            //printc(2,linha,0x06,0x07,c);
+             if(c !='0'){
+              reader[cont++] = c;    
+            } else if(c == '0') {
+              reader[cont++] = c;
+              prints(2,linha,0x06,0x07,reader);
+              linha ++;
+              cont = 0;
+            }
         }
         tecla(historico, &linha, msg, &indexMSG);
  }

@@ -144,7 +144,8 @@ char tecla(char** historico,int *linha,char *msg,int *indexMSG){
                         *linha = 2;
                     }
                   
-                    montahistorico(msg, day(), month(), year(), minute(), second(), hour(), historico, *linha);
+            montahistorico(msg, day(), month(), year(), minute(), second(), hour(), historico, *linha);
+            
             posy = 23;
             posx = 2;
             prints(posx, posy, 0x00, 0x00, "                                                           ");

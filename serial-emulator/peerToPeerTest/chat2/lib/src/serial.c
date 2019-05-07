@@ -31,5 +31,6 @@ int is_transmit_empty(int PORT) {
 
 void write_serial(char a, int PORT) {
    //while (is_transmit_empty(PORT) == 0);
+
    outb(PORT,a);
 }
